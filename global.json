@@ -6,13 +6,28 @@
         "",
         "using namespace std;",
         "",
-        "int main(){",
+        "int main(int argc, char *argv[]){",
         "",
         "",
         "",
         "\treturn 0;",
         "}"
     ],
-    "description": "这是一个cppmain模板"
+    "description": "这是一个cpp main模板"
+  },
+  "cmain": {
+    "prefix": ["!c"],
+    "body": [
+        "#include <stdio.h>",
+        "",
+        "",
+        "int main(int argc, char *argv[]){",
+        "",
+        "",
+        "",
+        "\treturn 0;",
+        "}"
+    ],
+    "description": "这是一个c main模板"
   }
 }
