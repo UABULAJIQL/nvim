@@ -2,13 +2,14 @@ return {
     on_setup = function(server)
         server:setup({
 
+            capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+            flags = {
+                debounce_text_changes = 150,
+            },
             on_attach = function(client, bufnr)
                 -- 禁用格式化功能，交给专门插件插件处理
                 -- client.resolved_capabilities.document_formatting = false --已弃用
                 -- client.resolved_capabilities.document_range_formatting = false --已弃用
-                --但是替换成这个会有问题
-                --client.server_capabilities.document_formatting = false
-                --client.server_capabilities.document_range_formatting = false
 
                 -- 相同单词高亮显示 又是resolved_capabilities这个弃用的东西 服了
                 --if client.resolved_capabilities.document_highlight then
