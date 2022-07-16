@@ -1,0 +1,18 @@
+{
+  "cppmain": {
+    "prefix": ["!cpp"],
+    "body": [
+        "#include <iostream>",
+        "",
+        "using namespace std;",
+        "",
+        "int main(){",
+        "",
+        "",
+        "",
+        "\treturn 0;",
+        "}"
+    ],
+    "description": "这是一个cppmain模板"
+  }
+}
