@@ -1,5 +1,5 @@
 {
-  "cppmain": {
+  "cpp": {
     "prefix": ["!cpp"],
     "body": [
         "#include <iostream>",
@@ -15,7 +15,7 @@
     ],
     "description": "这是一个cpp main模板"
   },
-  "cmain": {
+  "c": {
     "prefix": ["!c"],
     "body": [
         "#include <stdio.h>",
