@@ -69,7 +69,8 @@ packer.startup({
         use("hrsh7th/cmp-cmdline") -- { name = 'cmdline' }
 
         -- 常见编程语言代码段
-        use("rafamadriz/friendly-snippets")
+        --暂时没有用到 现在用的是vsnip 在cmp配置中可以设置
+        --use("rafamadriz/friendly-snippets") 
 
         -- JSON 增强
         use("b0o/schemastore.nvim")
