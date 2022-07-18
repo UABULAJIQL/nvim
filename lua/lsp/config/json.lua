@@ -4,7 +4,7 @@ return {
             settings = {
                 json = {
                     -- 启动扩展插件
-                    schemas = require("schemastore").json.schemas(),
+                    --schemas = require("schemastore").json.schemas(),
                 },
             },
             capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),

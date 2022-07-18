@@ -73,7 +73,9 @@ packer.startup({
         --use("rafamadriz/friendly-snippets") 
 
         -- JSON 增强
-        use("b0o/schemastore.nvim")
+        --use("b0o/schemastore.nvim")
+        -- clangd增强
+        --use("p00f/clangd_extensions.nvim")
 
 
         --------------------- ui美化 --------------------
