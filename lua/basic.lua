@@ -80,6 +80,9 @@ vim.o.showtabline = 2
 -- 使用增强状态栏插件后不再需要 vim 的模式提示
 vim.o.showmode = false
 
+-- 超出屏幕换行显示
+vim.wo.wrap = true
+
 -- 开启 Folding 模块
 -- zc折叠, zo打开折叠 只有在文件被编辑了的情况下才起作用，或者手动 :e 一下
 vim.opt.foldmethod = "expr"
