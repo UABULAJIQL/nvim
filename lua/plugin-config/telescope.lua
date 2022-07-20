@@ -15,7 +15,7 @@ telescope.setup({
   pickers = {
     -- 内置 pickers 配置
     find_files = {
-      -- 查找文件换皮肤，支持的参数有： dropdown, cursor, ivy
+      -- 窗口样式，支持的参数有： dropdown, cursor, ivy
       -- theme = "dropdown", 
     }
   },

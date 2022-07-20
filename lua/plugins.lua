@@ -70,7 +70,7 @@ packer.startup({
 
         -- 常见编程语言代码段
         --暂时没有用到 现在用的是vsnip 在cmp配置中可以设置
-        --use("rafamadriz/friendly-snippets") 
+        --use("rafamadriz/friendly-snippets")
 
         -- JSON 增强
         --use("b0o/schemastore.nvim")
@@ -116,7 +116,7 @@ packer.startup({
         -- git插件
         use("lewis6991/gitsigns.nvim")
 
-        -- 视图查看插件
+        -- git视图查看插件
         use({ "sindrets/diffview.nvim", require = { "nvim-lua/plenary.nvim" } })
 
         -- 括号匹配
