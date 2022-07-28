@@ -73,7 +73,7 @@ whichKey.setup({
   },
 })
 
--- 暂时先不搞 到时候感觉可以将所以键盘映射都整理一遍
+-- 到时候吧按键映射重新整理一遍 吧这里移动到keybindings
 whichKey.register({
   ["<leader>"] = {
     c = {
@@ -82,6 +82,7 @@ whichKey.register({
       b = { "<cmd>CMake build_all<cr>", "build all" },
       s = { "<cmd>CMake select_target<cr>", "select target" },
       r = { "<cmd>CMake run<cr>", "run" },
+      R = { "<cmd>CMake build_and_debug<cr>", "build and run" },
     },
   },
 })
