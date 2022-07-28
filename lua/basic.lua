@@ -107,23 +107,9 @@ vim.cmd [[
 
         autocmd!
 
-        "" 自动补全右括号
-        "autocmd FileType c,cpp,lua inoremap <buffer> ( ()<ESC>i
-
-        "" 自动补全双引号
-        "autocmd FileType c,cpp,lua inoremap <buffer> " ""<ESC>i
-
-        "" 自动补全单引号
-        "autocmd FileType c,cpp,lua inoremap <buffer> ' ''<ESC>i
-
-        "" 自动补全大括号
-        "autocmd FileType c,cpp,lua inoremap <buffer> { {}<ESC>i
-
-        "" 自动补全中括号
-        "autocmd FileType c,cpp,lua inoremap <buffer> [ []<ESC>i
-
         " 在末尾添加分号
-        autocmd FileType c,cpp,lua inoremap <buffer> ;; <ESC>A;
+        autocmd FileType c,cpp inoremap <buffer> ;; <ESC>A;
+        autocmd FileType c,cpp nnoremap <buffer> ;; A;<ESC>
 
         " 插入模式向后移动一个位置
         autocmd FileType c,cpp,lua inoremap <buffer> [[ <ESC>la
