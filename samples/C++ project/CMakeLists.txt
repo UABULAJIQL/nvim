@@ -1,14 +1,14 @@
 #定义cmake最低版本号要求
-CMAKE_MINIMUM_REQUIRED(VERSION 3.16.3)
+cmake_minimum_required(VERSION 3.16.3)
 
 #定义项目名称
-PROJECT(MBServer)
+project(ProjectName)
 
-#设置版本
-ADD_DEFINITIONS(-std=c++17)
+#编译参数
+add_compile_options(-Wall -std=c++11 -O2)
 
 #添加子目录
-ADD_SUBDIRECTORY(./lib)
-ADD_SUBDIRECTORY(./src)
+# add_subdirectory(./lib)
+add_subdirectory(./src)
 
 

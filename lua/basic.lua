@@ -92,7 +92,7 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevel = 99
 
 -- 与系统剪切板互通
---vim.o.clipboard="unnamed,unnamedplus"
+vim.o.clipboard="unnamed,unnamedplus"
 
 vim.cmd [[
 
