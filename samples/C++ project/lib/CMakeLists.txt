@@ -15,5 +15,5 @@
 #set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
 
 #创建一个静态库Mylib
-add_library(mylib STATIC ${lib_name})
+# add_library(mylib STATIC ${lib_name})
 

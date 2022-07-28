@@ -5,13 +5,10 @@
 set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 
 #多个源代码文件名放入到一个变量中
-aux_source_directory(./ main_name)
+aux_source_directory(./ files)
 
 #生成可执行文件
-add_executable(main ${main_name})
+add_executable(main ${files})
 
 #添加库文件
-target_link_libraries(main boost_system pthread protobuf mysqlclient)
-
-
-
+# target_link_libraries(main boost_system pthread protobuf mysqlclient)
