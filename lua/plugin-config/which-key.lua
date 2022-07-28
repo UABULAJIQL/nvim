@@ -82,7 +82,7 @@ whichKey.register({
       b = { "<cmd>CMake build_all<cr>", "build all" },
       s = { "<cmd>CMake select_target<cr>", "select target" },
       r = { "<cmd>CMake run<cr>", "run" },
-      R = { "<cmd>CMake build_and_debug<cr>", "build and run" },
+      R = { "<cmd>CMake build_and_run<cr>", "build and run" },
     },
   },
 })

@@ -209,11 +209,6 @@ _G.packer_plugins = {
     path = "/home/cq/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
   },
-  ["schemastore.nvim"] = {
-    loaded = true,
-    path = "/home/cq/.local/share/nvim/site/pack/packer/start/schemastore.nvim",
-    url = "https://github.com/b0o/schemastore.nvim"
-  },
   sniprun = {
     loaded = true,
     path = "/home/cq/.local/share/nvim/site/pack/packer/start/sniprun",
