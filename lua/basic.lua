@@ -108,11 +108,11 @@ vim.cmd [[
         autocmd!
 
         " 在末尾添加分号
-        autocmd FileType c,cpp inoremap <buffer> ;; <ESC>A;
-        autocmd FileType c,cpp nnoremap <buffer> ;; A;<ESC>
+        autocmd FileType c,cpp,cs inoremap <buffer> ;; <ESC>A;
+        autocmd FileType c,cpp,cs nnoremap <buffer> ;; A;<ESC>
 
         " 插入模式向后移动一个位置
-        autocmd FileType c,cpp,lua inoremap <buffer> [[ <ESC>la
+        autocmd FileType c,cpp,lua,cs inoremap <buffer> [[ <ESC>la
 
         " 关闭连续注释功能
         autocmd FileType * setlocal formatoptions=ql
