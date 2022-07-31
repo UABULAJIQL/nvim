@@ -1,6 +1,7 @@
 return {
     on_setup = function(server)
         server:setup({
+
             settings = {
                 python = {
                     analysis = {

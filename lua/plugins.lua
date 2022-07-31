@@ -42,7 +42,8 @@ packer.startup({
         --------------------- LSP --------------------
         -- LSP原来不是代码补全提示啥的 而是报错提醒和跳转啥的
         -- Language Server管理 可自动安装Language Server
-        use({ "williamboman/nvim-lsp-installer", commit = "36b44679f7cc73968dbb3b09246798a19f7c14e0" })
+        --use({ "williamboman/nvim-lsp-installer", commit = "36b44679f7cc73968dbb3b09246798a19f7c14e0" })
+        use({ "williamboman/nvim-lsp-installer" })
         -- Lspconfig LSP
         use({ "neovim/nvim-lspconfig" })
 
