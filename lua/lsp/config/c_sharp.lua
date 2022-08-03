@@ -2,12 +2,12 @@
 _G.OmniSharpReload = function()
 
     if vim.lsp.get_active_clients()[1].name == "omnisharp" then
-        vim.lsp.stop_client(vim.lsp.get_active_clients(), true)
+         vim.lsp.stop_client({vim.lsp.get_active_clients()[1]}, true)
         vim.wait(100, function()
             vim.api.nvim_command('LspStart omnisharp')
         end)
     else
-        vim.notify("client not is omnisharp")
+        vim.notify("Lsp client not is omnisharp")
     end
 
 end

@@ -198,6 +198,9 @@ pluginKeys.mapLSP = function(mapbuf)
 end
 -- <c-i>和<c-o>可以前后跳转
 
+-- omnisharp项目重新加载快捷键
+map("n", "<c-r>", ":lua OmniSharpReload()<CR>", opt)
+
 -- nvim-cmp 自动补全
 pluginKeys.cmp = function(cmp)
     return {
