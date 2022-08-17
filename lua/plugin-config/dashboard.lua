@@ -31,12 +31,12 @@ db.custom_center = {
     -- 创建项目
     action = "CMake create_project",
   },
-  {
-    icon = "  ",
-    desc = "Edit keybindings                    ",
-    -- 打开快捷键配置文件
-    action = "edit ~/.config/nvim/lua/keybindings.lua",
-  },
+  -- {
+  --   icon = "  ",
+  --   desc = "Edit keybindings                    ",
+  --   -- 打开快捷键配置文件
+  --   action = "edit ~/.config/nvim/lua/keybindings.lua",
+  -- },
   {
     icon = "  ",
     desc = "Delete Sessions                     ",

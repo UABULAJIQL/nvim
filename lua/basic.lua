@@ -100,8 +100,9 @@ if vim.fn.has('wsl') then
     augroup MY_WSL
     autocmd!
     autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe ',@")
-    autocmd InsertLeave * :!~/.config/nvim/sougou_en.exe
-    autocmd CmdlineLeave * :!~/.config/nvim/sougou_en.exe
+    " 暂时先这样 也可以判断当前状态来切换mode()函数可以获取模式
+    autocmd InsertLeave * :!~/.config/nvim/_en.exe
+    autocmd CmdlineLeave * :!~/.config/nvim/_en.exe
     augroup END
     ]]
 end
