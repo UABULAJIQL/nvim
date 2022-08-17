@@ -91,8 +91,18 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 -- https://stackoverflow.com/questions/8316139/how-to-set-the-default-to-unfolded-when-you-open-a-file
 vim.opt.foldlevel = 99
 
+-- 与系统剪切板互通 有用一段时间后不知道啥情况又不行了
+-- vim.o.clipboard="unnamed,unnamedplus"
+
 -- 与系统剪切板互通
-vim.o.clipboard="unnamed,unnamedplus"
+if vim.fn.has('wsl') then
+    vim.cmd [[
+  augroup Yank
+  autocmd!
+  autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe ',@")
+  augroup END
+  ]]
+end
 
 vim.cmd [[
 
