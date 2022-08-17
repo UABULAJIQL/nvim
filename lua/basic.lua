@@ -97,35 +97,37 @@ vim.opt.foldlevel = 99
 -- 与系统剪切板互通
 if vim.fn.has('wsl') then
     vim.cmd [[
-  augroup Yank
-  autocmd!
-  autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe ',@")
-  augroup END
-  ]]
+    augroup MY_WSL
+    autocmd!
+    autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe ',@")
+    autocmd InsertLeave * :!~/.config/nvim/sougou_en.exe
+    augroup END
+    ]]
 end
 
 vim.cmd [[
 
-    " 解决使用telescope一开始无法折叠问题
-    augroup _fold_bug_solution
-        autocmd!
-        autocmd BufRead * autocmd BufWinEnter * ++once normal! zx
-    augroup end
+" 解决使用telescope一开始无法折叠问题
+augroup _fold_bug_solution
+autocmd!
+autocmd BufRead * autocmd BufWinEnter * ++once normal! zx
+augroup end
 
-    " 自己的一些习惯
-    augroup _myslef_operate
+" 自己的一些习惯
+augroup _myslef_operate
 
-        autocmd!
+autocmd!
 
-        " 在末尾添加分号
-        autocmd FileType c,cpp,cs inoremap <buffer> ;; <ESC>A;
-        autocmd FileType c,cpp,cs nnoremap <buffer> ;; A;<ESC>
+" 在末尾添加分号
+autocmd FileType c,cpp,cs inoremap <buffer> ;; <ESC>A;
+autocmd FileType c,cpp,cs nnoremap <buffer> ;; A;<ESC>
 
-        " 插入模式向后移动一个位置
-        autocmd FileType c,cpp,lua,cs inoremap <buffer> [[ <ESC>la
+" 插入模式向后移动一个位置
+autocmd FileType c,cpp,lua,cs inoremap <buffer> [[ <ESC>la
 
-        " 关闭连续注释功能
-        autocmd FileType * setlocal formatoptions=ql
+" 关闭连续注释功能
+autocmd FileType * setlocal formatoptions=ql
 
-    augroup end
+augroup end
+
 ]]
