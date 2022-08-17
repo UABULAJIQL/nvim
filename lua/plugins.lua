@@ -69,6 +69,8 @@ packer.startup({
         -- 这个是命令行的补全
         use("hrsh7th/cmp-cmdline") -- { name = 'cmdline' }
 
+        --use("github/copilot.vim")
+
         -- 常见编程语言代码段
         --暂时没有用到 现在用的是vsnip 在cmp配置中可以设置
         --use("rafamadriz/friendly-snippets")
