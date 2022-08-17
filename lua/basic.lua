@@ -101,6 +101,7 @@ if vim.fn.has('wsl') then
     autocmd!
     autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe ',@")
     autocmd InsertLeave * :!~/.config/nvim/sougou_en.exe
+    autocmd CmdlineLeave * :!~/.config/nvim/sougou_en.exe
     augroup END
     ]]
 end
