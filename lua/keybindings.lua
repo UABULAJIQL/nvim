@@ -232,7 +232,7 @@ end
 -- 执行选中片段
 map("v", "rr", ":SnipRun<CR>", opt)
 -- 执行该文件
-map("n", "ra", "ggVG:SnipRun<CR>", opt)
+map("n", "ra", "ggVG:SnipRun<CR><c-o>", opt)
 
 -- 清空输出
 --map("n", "<leader>c", ":SnipClose<CR>", opt)
