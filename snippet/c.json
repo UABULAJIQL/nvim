@@ -1,0 +1,17 @@
+{
+  "main": {
+    "prefix": ["main"],
+    "body": [
+        "#include <stdio.h>",
+        "",
+        "",
+        "int main(int argc, char *argv[]) {",
+        "",
+        "",
+        "",
+        "\treturn 0;",
+        "}"
+    ],
+    "description": "这是一个c main模板"
+  }
+}

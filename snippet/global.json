@@ -1,0 +1,9 @@
+{
+  "hello": {
+    "prefix": ["hello"],
+    "body": [
+        "hello world"
+    ],
+    "description": "hello world片段"
+  }
+}

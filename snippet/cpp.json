@@ -1,0 +1,18 @@
+{
+  "main": {
+    "prefix": ["main"],
+    "body": [
+        "#include <iostream>",
+        "",
+        "using namespace std;",
+        "",
+        "int main(int argc, char *argv[]) {",
+        "",
+        "",
+        "",
+        "\treturn 0;",
+        "}"
+    ],
+    "description": "这是一个cpp main模板"
+  }
+}

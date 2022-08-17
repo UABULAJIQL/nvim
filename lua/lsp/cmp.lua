@@ -71,5 +71,5 @@ cmp.setup.cmdline(":", {
 })
 
 vim.cmd([[
-    let g:vsnip_snippet_dir = "~/.config/nvim/"
+    let g:vsnip_snippet_dir = "~/.config/nvim/snippet/"
 ]])

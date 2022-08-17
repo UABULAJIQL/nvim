@@ -59,6 +59,7 @@ packer.startup({
         -- snippet 引擎 这个是用来自定义代码段的
         use("hrsh7th/vim-vsnip")
         ---补全源---
+        -- 获取vim-vsnip中的源
         use("hrsh7th/cmp-vsnip")
         -- 这个是neovim内置LSP的补全内容
         use("hrsh7th/cmp-nvim-lsp") -- { name = nvim_lsp }
