@@ -11,6 +11,12 @@ map("n", "s", "", opt)
 -- 取消S默认功能 原：删除当前字符进入插入模式
 map("n", "S", "", opt)
 
+-- 取消t默认功能 原：向后找到字符移动到之前 类型f
+map("", "t", "", opt)
+-- 取消T默认功能 原：向前找到字符移动到之后 类型F
+map("", "T", "", opt)
+
+
 map("i", "<C-c>", "", opt)
 
 -- 在visual 模式里粘贴不要复制
@@ -444,6 +450,9 @@ pluginKeys.toggletermList = {
 -- 当前行单词定位
 map("", "f", "<cmd>HopChar1CurrentLine<cr>", opt)
 -- 当前屏幕单词定位
-map("", "F", "<cmd>HopChar1<cr>", opt)
+map("", "F", "<cmd>HopChar2<cr>", opt)
+-- 向下移动行
+map("", "t", "<cmd>HopLine<cr>", opt)
+
 
 return pluginKeys
