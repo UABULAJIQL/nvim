@@ -132,6 +132,9 @@ packer.startup({
         -- gdb
         use({ "sakhnik/nvim-gdb", run = "./install.sh" })
 
+        -- 快速移动
+        use({'phaazon/hop.nvim', branch = 'v2'})
+
 
 
 

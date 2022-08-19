@@ -440,4 +440,10 @@ pluginKeys.toggletermList = {
 }
 
 
+--- hop ---
+-- 当前行单词定位
+map("", "f", "<cmd>HopChar1CurrentLine<cr>", opt)
+-- 当前屏幕单词定位
+map("", "F", "<cmd>HopChar1<cr>", opt)
+
 return pluginKeys
