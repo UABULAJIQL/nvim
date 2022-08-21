@@ -15,7 +15,6 @@ local servers = {
     jsonls = require("lsp.config.json"),
     cmake = require("lsp.config.cmake"),
     pyright = require("lsp.config.python"),
-    omnisharp = require("lsp.config.c_sharp"),
 }
 
 -- 自动安装 Language Servers

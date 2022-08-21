@@ -447,12 +447,13 @@ pluginKeys.toggletermList = {
 
 
 --- hop ---
--- 当前行单词定位
-map("", "f", "<cmd>HopChar1CurrentLine<cr>", opt)
+-- f功能强化
+map("", "f", "<cmd>HopChar1CurrentLineAC<cr>", opt)
+map("", "F", "<cmd>HopChar1CurrentLineBC<cr>", opt)
 -- 当前屏幕单词定位
-map("", "F", "<cmd>HopChar2<cr>", opt)
--- 向下移动行
-map("", "t", "<cmd>HopLine<cr>", opt)
+map("", "t", "<cmd>HopChar2<cr>", opt)
+-- 移动行
+map("", "T", "<cmd>HopLine<cr>", opt)
 
 
 return pluginKeys

@@ -1,3 +1,4 @@
+-- c#lsp已经移除了这个配置文件暂时留着
 -- 重新加载omnisharp 不重新加载unity中添加新的脚本会报错
 _G.OmniSharpReload = function()
 
@@ -11,9 +12,6 @@ _G.OmniSharpReload = function()
     end
 
 end
-
-
-
 
 return {
     on_setup = function(server)
