@@ -127,13 +127,19 @@ packer.startup({
         use("windwp/nvim-autopairs")
 
         -- 突出显示光标下变量
-        use("RRethy/vim-illuminate")
+        -- use("RRethy/vim-illuminate")
 
         -- gdb
         use({ "sakhnik/nvim-gdb", run = "./install.sh" })
 
         -- 快速移动
-        use({'phaazon/hop.nvim', branch = 'v2'})
+        use({ 'phaazon/hop.nvim', branch = 'v2' })
+
+        ---markdown---
+        -- 预览
+        use({ "iamcco/markdown-preview.nvim", run = function() vim.fn["mkdp#util#install"]() end })
+        -- 粘贴图片 使用有问题自己用c++写了一个程序 只能在windows下运行的
+        -- use({ 'ekickx/clipboard-image.nvim' })
 
 
 

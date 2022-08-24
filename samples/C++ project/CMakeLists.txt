@@ -1,5 +1,5 @@
 #定义cmake最低版本号要求
-cmake_minimum_required(VERSION 3.16.3)
+cmake_minimum_required(VERSION 3.24.0)
 
 #定义项目名称
 project(ProjectName)

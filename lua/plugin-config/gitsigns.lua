@@ -49,6 +49,7 @@ gitsigns.setup({
     on_attach = require('keybindings').gitsignsList(gitsigns)
 })
 
+-- CQ
 _G.GitCommit = function()
 
     if not require("utils").exists(".git") then
@@ -65,6 +66,7 @@ _G.GitCommit = function()
 
 end
 
+-- CQ
 _G.GitPush = function()
     if not require("utils").exists(".git") then
         vim.notify("not find .git")
@@ -85,3 +87,14 @@ _G.GitPush = function()
     end
 
 end
+
+-- CQ
+_G.MarkDownImgPaste = function()
+
+    if (vim.bo.filetype == "markdown") then
+        vim.api.nvim_command('!~/.config/nvim/cq_markdownPastePNG.exe img/')
+    else
+        vim.notify("not a markdown file")
+    end
+
+end;

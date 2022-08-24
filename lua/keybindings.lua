@@ -172,7 +172,6 @@ pluginKeys.mapLSP = function(mapbuf)
     mapbuf("n", "gh", "<cmd>Lspsaga hover_doc<cr>", opt)
 
     -- 这两个不知道干嘛用的
-    --mapbuf("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
     --mapbuf("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
 
     --mapbuf("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opt)
@@ -450,10 +449,15 @@ pluginKeys.toggletermList = {
 -- f功能强化
 map("", "f", "<cmd>HopChar1CurrentLineAC<cr>", opt)
 map("", "F", "<cmd>HopChar1CurrentLineBC<cr>", opt)
--- 当前屏幕单词定位
+-- 2字符定位
 map("", "t", "<cmd>HopChar2<cr>", opt)
--- 移动行
-map("", "T", "<cmd>HopLine<cr>", opt)
+-- 1字符定位
+map("", "T", "<cmd>HopChar1<cr>", opt)
 
+---markdown---
+-- 启动预览
+map("n", "mv", "<cmd>MarkdownPreview<cr>", opt)
+-- 粘贴截图图片
+map("n", "mp", "<cmd>lua MarkDownImgPaste('img/')<cr>o<esc>\"+p", opt)
 
 return pluginKeys

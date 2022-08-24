@@ -1,0 +1,5 @@
+需要在：~/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim/app/lib/util/opener.js
+中添加两句(加在"let command;"前面):
+    platform = 'wsl2';
+    tool = "/mnt/c/Program\ Files\ \(x86\)/Microsoft/Edge/Application/msedge.exe"
+

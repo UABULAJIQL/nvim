@@ -80,7 +80,7 @@ return {
                 --vim.cmd('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()')
 
                 -- 支持下面这两个插件
-                require('illuminate').on_attach(client)
+                -- require('illuminate').on_attach(client)
                 require('aerial').on_attach(client, bufnr)
             end,
 

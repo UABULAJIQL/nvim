@@ -6,6 +6,10 @@ require('keybindings')
 require('plugins')
 -- 主题设置
 require('colorscheme')
+-- autocmd
+require('audocmd')
+-- cq函数
+require('cqFunction')
 
 -- 侧边栏配置配置
 require("plugin-config.nvim-tree")
@@ -53,10 +57,14 @@ require("lsp.cmp")
 require("lsp.ui")
 
 -- 高亮关键字
-require("plugin-config.vim-illuminate")
+-- require("plugin-config.vim-illuminate")
 
 -- 快速移动
 require("plugin-config.hop")
+
+-- markdown图标粘贴
+require("plugin-config.clipboard-image")
+
 
 
 
