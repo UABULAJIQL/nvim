@@ -62,8 +62,8 @@ require("lsp.ui")
 -- 快速移动
 require("plugin-config.hop")
 
--- markdown图标粘贴
-require("plugin-config.clipboard-image")
+-- md管理
+require("plugin-config.mkdnflow")
 
 
 

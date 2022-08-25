@@ -140,8 +140,8 @@ packer.startup({
         use({ "iamcco/markdown-preview.nvim", run = function() vim.fn["mkdp#util#install"]() end })
         -- 粘贴图片 使用有问题自己用c++写了一个程序 只能在windows下运行的
         -- use({ 'ekickx/clipboard-image.nvim' })
-
-
+        -- 管理
+        use({ 'jakewvincent/mkdnflow.nvim', rocks = 'luautf8' })
 
 
     end,

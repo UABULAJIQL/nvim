@@ -458,6 +458,7 @@ map("", "T", "<cmd>HopChar1<cr>", opt)
 -- 启动预览
 map("n", "mv", "<cmd>MarkdownPreview<cr>", opt)
 -- 粘贴截图图片
-map("n", "mp", "<cmd>lua MarkDownImgPaste('img/')<cr>o<esc>\"+p", opt)
+-- map("n", "mp", "<cmd>lua MarkDownImgPaste()<cr>o<esc>\"+p", opt)
+-- map("n", "mp", "<cmd>lua MarkDownImgPaste()<cr>", opt)
 
 return pluginKeys

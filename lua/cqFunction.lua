@@ -1,5 +1,6 @@
+--这个_G原来是lsp的类。。。用了之后好像有缓存
 -- git
-_G.GitCommit = function()
+GitCommit = function()
 
     if not require("utils").exists(".git") then
         vim.notify("not find .git")
@@ -16,7 +17,8 @@ _G.GitCommit = function()
 end
 
 -- git
-_G.GitPush = function()
+-- _G.GitPush = function()
+GitPush = function()
     if not require("utils").exists(".git") then
         vim.notify("not find .git")
         return
@@ -38,13 +40,16 @@ _G.GitPush = function()
 end
 
 -- markdown
-_G.MarkDownImgPaste = function(imgPath)
-
-    if (vim.bo.filetype == "markdown") then
-        vim.api.nvim_command('!~/.config/nvim/cq_markdownPastePNG.exe ' .. imgPath)
-
-    else
-        vim.notify("not a markdown file")
-    end
-
-end;
+-- _G.MarkDownImgPaste = function()
+--     -- local prefix = 'img/'
+--     if (vim.bo.filetype == "markdown") then
+--         vim.notify("????")
+--         -- vim.api.nvim_command('!~/.config/nvim/cq_markdownPastePNG.exe test/')
+--         -- vim.api.nvim_command('!~/.config/nvim/cq_markdownPastePNG.exe ' .. prefix)
+--         -- vim.api.nvim_parse_cmd('~/.config/nvim/cq_markdownPastePNG.exe', {})
+--
+--     else
+--         vim.notify("not a markdown file")
+--     end
+--
+-- end;
