@@ -1,18 +1,30 @@
--- wsl的操作
+-- SessionSavePost 保存会话后执行
+-- SessionLoadPost 加载会话后执行
+-- 自动打开侧边栏
+local config_group = vim.api.nvim_create_augroup('MyConfigGroup', {}) -- A global group for all your config autocommands
+
+vim.api.nvim_create_autocmd({ 'SessionLoadPost' }, {
+    group = config_group,
+    callback = function()
+        require('nvim-tree').toggle(false, true)
+    end,
+})
+
+-- wsl的操作 这个检测好像不起作用啊
 if vim.fn.has('wsl') then
-    vim.cmd [[
+    vim.cmd([[
     augroup MY_WSL
     autocmd!
     " 删除dd或者复制yy的时候把缓冲区中的数据存入剪切板
-    autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe ',@")
+    autocmd TextYankPost * :call system('/mnt/c/windows/system32/clip.exe', @")
     " 暂时先这样 也可以判断当前状态来切换mode()函数可以获取模式
-    autocmd InsertLeave * :!~/.config/nvim/_en.exe
-    autocmd CmdlineLeave * :!~/.config/nvim/_en.exe
+    autocmd InsertLeave * :call system('~/.config/nvim/_en.exe')
+    autocmd CmdlineLeave * :call system('~/.config/nvim/_en.exe')
     augroup END
-    ]]
+    ]])
 end
 
-vim.cmd [[
+vim.cmd([[
 
 " 解决使用telescope一开始无法折叠问题
 augroup _fold_bug_solution
@@ -36,4 +48,4 @@ autocmd FileType * setlocal formatoptions=ql
 
 augroup end
 
-]]
+]])

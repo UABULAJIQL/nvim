@@ -1,6 +1,5 @@
---这个_G原来是lsp的类。。。用了之后好像有缓存
 -- git
-GitCommit = function()
+_G.GitCommit = function()
 
     if not require("utils").exists(".git") then
         vim.notify("not find .git")
@@ -17,8 +16,7 @@ GitCommit = function()
 end
 
 -- git
--- _G.GitPush = function()
-GitPush = function()
+_G.GitPush = function()
     if not require("utils").exists(".git") then
         vim.notify("not find .git")
         return
@@ -39,17 +37,69 @@ GitPush = function()
 
 end
 
--- markdown
--- _G.MarkDownImgPaste = function()
---     -- local prefix = 'img/'
---     if (vim.bo.filetype == "markdown") then
---         vim.notify("????")
---         -- vim.api.nvim_command('!~/.config/nvim/cq_markdownPastePNG.exe test/')
---         -- vim.api.nvim_command('!~/.config/nvim/cq_markdownPastePNG.exe ' .. prefix)
---         -- vim.api.nvim_parse_cmd('~/.config/nvim/cq_markdownPastePNG.exe', {})
---
---     else
---         vim.notify("not a markdown file")
---     end
---
--- end;
+--- markdown ---
+-- 粘贴图片
+_G.MarkDownImgPaste = function()
+    if (vim.bo.filetype == "markdown") then
+        local name = vim.fn.expand('%:t:r')
+        local pathName = "img/" .. name .. "_"
+        local result = vim.fn.system("~/.config/nvim/cq_markdownPastePNG.exe " .. pathName)
+        if result == "0" then
+            vim.api.nvim_command('normal o')
+            vim.api.nvim_command('normal "+p')
+
+            vim.api.nvim_command('normal 0f(lyi(')
+            pathName = vim.fn.getreg('"')
+            pathName = vim.fn.expand('%:p:h') .. '/' .. pathName
+            vim.fn.system("python3 ~/.config/nvim/cq_bmpToPng.py " .. pathName)
+        else
+            vim.notify("" .. result)
+        end
+
+    else
+        vim.notify("not a markdown file")
+    end
+end;
+
+-- 删除链接同时删除文件
+_G.MarkDownDelLink = function()
+    if (vim.bo.filetype == "markdown") then
+        vim.api.nvim_command('normal yy')
+        local value = vim.fn.getreg('"')
+        local index = string.find(value, "(", 1, true)
+        if index == nil then
+            vim.notify("nil")
+        else
+            vim.api.nvim_command('normal 0f(lyi(')
+            local pathName = vim.fn.getreg('"')
+            pathName = vim.fn.expand('%:p:h') .. '/' .. pathName
+            local ok = require("utils").exists(pathName)
+            if ok then
+                vim.fn.system("rm " .. pathName)
+                vim.api.nvim_command('normal dd')
+            else
+                vim.notify("file does not exist")
+            end
+
+        end
+    else
+        vim.notify("not a markdown file")
+    end
+end;
+
+--[[
+
+-- 已弃用
+-- 重新加载omnisharp 不重新加载unity中添加新的脚本会报错
+_G.OmniSharpReload = function()
+    if vim.lsp.get_active_clients()[1].name == "omnisharp" then
+        vim.lsp.stop_client({vim.lsp.get_active_clients()[1]}, true)
+        vim.wait(100, function()
+            vim.api.nvim_command('LspStart omnisharp')
+        end)
+    else
+        vim.notify("Lsp client not is omnisharp")
+    end
+end
+
+]]

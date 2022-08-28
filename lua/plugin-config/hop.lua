@@ -1,8 +1,8 @@
--- githunk变化显示
+-- 快速跳转
 local status, hop = pcall(require, "hop")
 if not status then
     vim.notify("没有找到 hop")
     return
 end
 
-hop.setup()
+hop.setup({})

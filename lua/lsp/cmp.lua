@@ -70,6 +70,9 @@ cmp.setup.cmdline(":", {
     }),
 })
 
-vim.cmd([[
-    let g:vsnip_snippet_dir = "~/.config/nvim/snippet/"
-]])
+-- 这样写代替原来的vimscript语法
+vim.g.vsnip_snippet_dir = "~/.config/nvim/snippet/"
+
+-- vim.cmd([[
+--     let g:vsnip_snippet_dir = "~/.config/nvim/snippet/"
+-- ]])

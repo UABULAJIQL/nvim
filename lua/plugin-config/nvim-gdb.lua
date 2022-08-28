@@ -10,21 +10,30 @@
 -- 3. make
 -- 4. make install
 
-vim.cmd([[
-    let g:nvimgdb_disable_start_keymaps = 1
-    let g:nvimgdb_use_find_executables = 0
-    let g:nvimgdb_use_cmake_to_find_executables = 0
-    let w:nvimgdb_termwin_command = "rightbelow vnew"
-    let w:nvimgdb_codewin_command = "vnew"
-    let g:nvimgdb_config_override = {
-      \ 'key_next': '-n',
-      \ 'key_step': '-s',
-      \ 'key_finish': '-f',
-      \ 'key_continue': '-c',
-      \ 'key_until': '-u',
-      \ 'key_breakpoint': '-b',
-  \ }
-]])
+vim.g.nvimgdb_disable_start_keymaps = 1
+vim.g.nvimgdb_use_find_executables = 0;
+vim.g.nvimgdb_use_cmake_to_find_executables = 0
+vim.w.nvimgdb_termwin_command = "rightbelow vnew"
+vim.w.nvimgdb_codewin_command = "vnew"
+vim.g.nvimgdb_config_override = {
+    ['key_next'] = '-n',
+    ['key_step'] = '-s',
+    ['key_finish'] = '-f',
+    ['key_continue'] = '-c',
+    ['key_until'] = '-u',
+    ['key_breakpoint'] = '-b'
+}
+
+-- vim.cmd([[
+-- let g:nvimgdb_config_override = {
+--     'key_next': '-n',
+--     'key_step': '-s',
+--     'key_finish': '-f',
+--     'key_continue': '-c',
+--     'key_until': '-u',
+--     'key_breakpoint': '-b',
+-- }
+-- ]])
 
 -- vim.cmd([[
 --   nnoremap <silent> <expr> <leader>dd ":GdbStart gdb -q " . input("debugee file path: ") . "\<ESC>"
@@ -78,9 +87,9 @@ _G.CloseWatchBuffers = function()
 end
 
 vim.cmd([[
-    " User 是用户自定义行为
-    "开始的时候
-    autocmd User NvimGdbStart :lua GdbSessionInit()
-    "退出的时候
-    autocmd User NvimGdbCleanup :lua CloseWatchBuffers()
+" User 是用户自定义行为
+"开始的时候
+autocmd User NvimGdbStart :lua GdbSessionInit()
+"退出的时候
+autocmd User NvimGdbCleanup :lua CloseWatchBuffers()
 ]])

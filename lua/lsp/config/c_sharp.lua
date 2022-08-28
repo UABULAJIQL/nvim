@@ -1,18 +1,4 @@
 -- c#lsp已经移除了这个配置文件暂时留着
--- 重新加载omnisharp 不重新加载unity中添加新的脚本会报错
-_G.OmniSharpReload = function()
-
-    if vim.lsp.get_active_clients()[1].name == "omnisharp" then
-         vim.lsp.stop_client({vim.lsp.get_active_clients()[1]}, true)
-        vim.wait(100, function()
-            vim.api.nvim_command('LspStart omnisharp')
-        end)
-    else
-        vim.notify("Lsp client not is omnisharp")
-    end
-
-end
-
 return {
     on_setup = function(server)
         server:setup({
@@ -20,7 +6,6 @@ return {
             --     projectLoadTimeout = 1
             --
             -- },
-
 
             -- 启用mono
             use_mono = true,

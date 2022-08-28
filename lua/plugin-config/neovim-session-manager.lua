@@ -28,14 +28,3 @@ session_manager.setup({
 })
 
 
--- SessionSavePost 保存会话后执行
--- SessionLoadPost 加载会话后执行
--- 自动打开侧边栏
-local config_group = vim.api.nvim_create_augroup('MyConfigGroup', {}) -- A global group for all your config autocommands
-
-vim.api.nvim_create_autocmd({ 'SessionLoadPost' }, {
-    group = config_group,
-    callback = function()
-        require('nvim-tree').toggle(false, true)
-    end,
-})

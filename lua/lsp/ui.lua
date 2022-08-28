@@ -115,7 +115,7 @@ lspsaga.setup { -- defaults ...
     highlight_prefix = false,
 }
 
--- 这个是也是lspkind的部分 不过他后面有return所以我不敢随便把代码放后面
+-- lspkind的部分
 local M = {}
 -- 为 cmp.lua 提供参数格式
 M.formatting = {
