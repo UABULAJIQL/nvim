@@ -435,9 +435,10 @@ map("n", "<leader>dc", "<cmd>lua CreateWatch()<cr>", opt)
 map("n", "<leader>dbt", "<cmd>GdbLopenBacktrace<cr>", opt)
 map("n", "<leader>dbp", "<cmd>GdbLopenBreakpoints<cr>", opt)
 
--- 
+-- cpp快速创建类文件
 map("v", "cr", ":TSCppDefineClassFunc<cr>", opt)
 map("n", "cr", ":lua CreateCpp()<cr>", opt)
+map("n", "ch", ":lua HeadDef()<cr>", opt)
 
 -- 浮动终端的启动和影藏
 pluginKeys.toggletermList = {

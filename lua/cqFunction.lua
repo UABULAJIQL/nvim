@@ -102,9 +102,23 @@ _G.CreateCpp = function()
         -- 如果不存在创建
         vim.api.nvim_command('!touch ' .. name)
         -- 追加头文件引用
-        vim.api.nvim_command('!echo ' .. vim.fn.expand('\\\\#include \\"%:t\\"') .. ' >> ' .. name)
+        vim.api.nvim_command('!echo \\\\#include \\"' .. vim.fn.expand('%:t') .. '\\" >> ' .. name)
     end
     vim.api.nvim_command('vsp ' .. name)
+
+end;
+-- 头文件自动添加防止头文件重复包含语句
+_G.HeadDef = function()
+    local tail = vim.fn.expand('%:e')
+    if tail ~= 'h' then
+        return
+    end
+    local name = vim.fn.expand('%:t:r')
+    name = string.upper(name)
+    vim.api.nvim_command('!echo \\\\#ifndef _' .. name .. '_H >> ' .. vim.fn.expand('%'))
+    vim.api.nvim_command('!echo -e \'\\#define _' .. name .. '_H\\n\\n\\n\' >> ' .. vim.fn.expand('%'))
+    vim.api.nvim_command('!echo \\\\#endif >>' .. vim.fn.expand('%'))
+
 
 end;
 
