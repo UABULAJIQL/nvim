@@ -15,16 +15,17 @@ packer.startup({
         -- nvim-tree 侧边栏
         use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
 
-        -- bufferline 顶部标签栏
-        use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" } })
+        -- bufferline 顶部标签栏 vim-bbye是用来删除缓冲区改变布局的
+        use { "akinsho/bufferline.nvim", tag = "v2.*",
+        requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" } }
 
         -- lualine 下方提示线
-        use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
+        use({ "nvim-lualine/lualine.nvim", requires = "kyazdani42/nvim-web-devicons" })
         -- 提示线的扩展
         use("arkav/lualine-lsp-progress")
 
         -- telescope 模糊搜索快速打开文件
-        use({ 'nvim-telescope/telescope.nvim', requires = { "nvim-lua/plenary.nvim" } })
+        use({ 'nvim-telescope/telescope.nvim', requires = "nvim-lua/plenary.nvim" })
         -- 选择ui
         use("nvim-telescope/telescope-ui-select.nvim")
         -- telescope extensions 可以显示查看环境变量
@@ -44,6 +45,9 @@ packer.startup({
         -- Language Server管理 可自动安装Language Server
         --use({ "williamboman/nvim-lsp-installer", commit = "36b44679f7cc73968dbb3b09246798a19f7c14e0" })
         use({ "williamboman/nvim-lsp-installer" })
+        -- 作者将不再维护nvim-lsp-installer了 转到mason
+        -- use({ "williamboman/mason.nvim" })
+
         -- Lspconfig LSP
         use({ "neovim/nvim-lspconfig" })
 
@@ -90,9 +94,6 @@ packer.startup({
         -- 各种小框框
         use("tami5/lspsaga.nvim")
 
-        -- 突出显示当前光标下的单词
-        --use "RRethy/vim-illuminate"
-
         -- 代码格式话现在的Language Server好像自带格式化
         -- 注意：代码格式化和代码缩进是不同的 比如：格式化也会馆逗号后面加一个空格
 
@@ -113,6 +114,7 @@ packer.startup({
 
         -- 文件大纲图
         use("stevearc/aerial.nvim")
+        -- use("simrat39/symbols-outline.nvim")
 
         -- 快速注释
         use("numToStr/Comment.nvim")
@@ -127,7 +129,7 @@ packer.startup({
         use("windwp/nvim-autopairs")
 
         -- 突出显示光标下变量
-        -- use("RRethy/vim-illuminate")
+        use({"RRethy/vim-illuminate", commit = "6bfa5dc069bd4aa8513a3640d0b73392094749be"})
 
         -- gdb
         use({ "sakhnik/nvim-gdb", run = "./install.sh" })
@@ -135,13 +137,17 @@ packer.startup({
         -- 快速移动
         use({ 'phaazon/hop.nvim', branch = 'v2' })
 
+        -- 代码折叠
+        -- use {'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async'}
+
         ---markdown---
         -- 预览
         use({ "iamcco/markdown-preview.nvim", run = function() vim.fn["mkdp#util#install"]() end })
         -- 粘贴图片 使用有问题自己用c++写了一个程序 只能在windows下运行的
         -- use({ 'ekickx/clipboard-image.nvim' })
-        -- 管理
-        use({ 'jakewvincent/mkdnflow.nvim', rocks = 'luautf8' })
+        -- 管理 不是很清楚这个utf8干嘛的先移除
+        -- use({ 'jakewvincent/mkdnflow.nvim', rocks = 'luautf8' })
+        use({ 'jakewvincent/mkdnflow.nvim' })
 
 
     end,

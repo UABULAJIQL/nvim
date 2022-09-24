@@ -57,7 +57,7 @@ require("lsp.cmp")
 require("lsp.ui")
 
 -- 高亮关键字
--- require("plugin-config.vim-illuminate")
+require("plugin-config.vim-illuminate")
 
 -- 快速移动
 require("plugin-config.hop")

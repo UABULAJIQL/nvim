@@ -70,7 +70,6 @@ cmp.setup.cmdline(":", {
     }),
 })
 
--- 这样写代替原来的vimscript语法
 vim.g.vsnip_snippet_dir = "~/.config/nvim/snippet/"
 
 -- vim.cmd([[

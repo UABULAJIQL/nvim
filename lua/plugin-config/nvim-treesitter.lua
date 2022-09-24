@@ -28,10 +28,10 @@ treesitter.setup({
         },
     },
 
-    -- 启用代码缩进模块 这个功能vim自带有
-    --indent = {
+    -- 启用代码缩进模块 测试了没屌用
+    -- indent = {
     --    enable = true,
-    --},
+    -- },
 
 
 })

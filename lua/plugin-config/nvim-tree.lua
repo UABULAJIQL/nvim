@@ -12,10 +12,10 @@ nvim_tree.setup({
     git = {
         enable = false,
     },
-    -- 隐藏 .文件 和 node_modules 文件夹
+    -- 隐藏 .文件 和指定文件夹
     filters = {
         dotfiles = true,
-        custom = { 'node_modules' },
+        custom = { 'compile_commands.json' },
     },
     view = {
         -- 宽度
@@ -43,22 +43,17 @@ nvim_tree.setup({
             --quit_on_open = true,
         },
     },
+
     -- wsl install -g wsl-open
     -- https://github.com/4U6U57/wsl-open/
     -- 暂时先不安装 就是说比如：打开图片可以使用windows的默认图片查看器打开
     --system_open = {
-    --    cmd = 'wsl-open', -- mac 直接设置为 open
-    --},
+        --    cmd = 'wsl-open', -- mac 直接设置为 open
+        --},
 
-    -- project plugin 需要这样设置 这个插件都移除了
-    --update_cwd = true,
-    --update_focused_file = {
-    --    enable = true,
-    --    update_cwd = true,
-    --},
-})
+    })
 
--- 自动关闭 这个不知道是啥
---vim.cmd([[
---autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
---]])
+    -- 自动关闭 这个不知道是啥
+    --vim.cmd([[
+    --autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
+    --]])

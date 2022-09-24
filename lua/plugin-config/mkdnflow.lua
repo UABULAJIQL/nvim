@@ -91,5 +91,9 @@ mkdnflow.setup({
         MkdnTableNewColBefore = { 'n', '<leader>iC' },
         MkdnFoldSection = { 'n', '<leader>f' },
         MkdnUnfoldSection = { 'n', '<leader>F' }
-    }
-})
+    },
+    -- 到mkdnflow插件中添加 为了退格的时候可以删了右边的缓冲区
+    --   user_command('MkdnGoBack', function(opts) mkdnflow.buffers.goBack()
+        --     vim.api.nvim_command("BufferLineCloseRight")
+        -- end, {})
+    })

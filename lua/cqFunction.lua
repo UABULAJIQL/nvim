@@ -52,6 +52,7 @@ _G.MarkDownImgPaste = function()
             pathName = vim.fn.getreg('"')
             pathName = vim.fn.expand('%:p:h') .. '/' .. pathName
             vim.fn.system("python3 ~/.config/nvim/cq_bmpToPng.py " .. pathName)
+            vim.api.nvim_command('w')
         else
             vim.notify("" .. result)
         end
@@ -77,6 +78,7 @@ _G.MarkDownDelLink = function()
             if ok then
                 vim.fn.system("rm " .. pathName)
                 vim.api.nvim_command('normal dd')
+                vim.api.nvim_command('w')
             else
                 vim.notify("file does not exist")
             end

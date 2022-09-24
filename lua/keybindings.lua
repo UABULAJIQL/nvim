@@ -88,7 +88,7 @@ map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
 --"moll/vim-bbye" 关闭当前标签页
 map("n", "<C-q>", ":Bdelete!<CR>", opt)
 -- 关闭为定义组的所有buffer other
-map("n", "<C-a>q", ":BufferLineGroupClose ungrouped<CR>", opt)
+map("n", "<C-a>q", ":BufferLineCloseLeft<CR>:BufferLineCloseRight<CR>", opt)
 
 -- 关闭左边或者右边的页面
 --map("n", "<leader>bl", ":BufferLineCloseRight<CR>", opt)
