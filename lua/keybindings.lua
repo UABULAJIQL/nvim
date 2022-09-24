@@ -81,7 +81,7 @@ map("v", "K", ":move '<-2<CR>gv-gv", opt)
 
 
 -- bufferline
--- 左右Tab切换
+-- 左右切换
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
 -- 关闭
@@ -435,8 +435,9 @@ map("n", "<leader>dc", "<cmd>lua CreateWatch()<cr>", opt)
 map("n", "<leader>dbt", "<cmd>GdbLopenBacktrace<cr>", opt)
 map("n", "<leader>dbp", "<cmd>GdbLopenBreakpoints<cr>", opt)
 
--- 按键提示
---map("n", "<leader>k", "<cmd>WhichKey<CR>", opt)
+-- 
+map("v", "cr", ":TSCppDefineClassFunc<cr>", opt)
+map("n", "cr", ":lua CreateCpp()<cr>", opt)
 
 -- 浮动终端的启动和影藏
 pluginKeys.toggletermList = {

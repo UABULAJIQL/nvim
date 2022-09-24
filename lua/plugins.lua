@@ -39,6 +39,8 @@ packer.startup({
 
         -- treesitter 语法高亮增强
         use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+        -- cpp根据头文件快速创建文件
+        use({"Badhi/nvim-treesitter-cpp-tools", requires = "nvim-treesitter/nvim-treesitter"})
 
         --------------------- LSP --------------------
         -- LSP原来不是代码补全提示啥的 而是报错提醒和跳转啥的

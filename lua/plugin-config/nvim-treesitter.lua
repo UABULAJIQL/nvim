@@ -8,7 +8,7 @@ end
 treesitter.setup({
     -- 安装 language parser
     -- :TSInstallInfo 命令查看支持的语言 会自动安装对应的parsers
-    ensure_installed = { "c", "cpp", "vim", "lua", "json", "cmake", "python" , "markdown"},
+    ensure_installed = { "c", "cpp", "vim", "lua", "json", "cmake", "python", "markdown" },
     -- 启用代码高亮模块
     highlight = {
         -- 开起treesitter高亮
@@ -29,9 +29,22 @@ treesitter.setup({
     },
 
     -- 启用代码缩进模块 测试了没屌用
-    -- indent = {
-    --    enable = true,
-    -- },
+    -- indent = { enable = true, },
 
+    -- 添加cpp扩展
+    nt_cpp_tools = {
+        enable = true,
+        preview = {
+            quit = 'cq', -- optional keymapping for quit preview
+            accept = '<tab>' -- optional keymapping for accept preview
+        },
+        header_extension = 'h', -- optional
+        source_extension = 'cxx', -- optional
+        custom_define_class_function_commands = { -- optional
+        TSCppImplWrite = {
+            output_handle = require 'nvim-treesitter.nt-cpp-tools.output_handlers'.get_add_to_cpp()
+        }
+    }
+}
 
 })

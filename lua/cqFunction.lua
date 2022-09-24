@@ -89,6 +89,26 @@ _G.MarkDownDelLink = function()
     end
 end;
 
+-- 自动创建cpp文件
+_G.CreateCpp = function()
+    local tail = vim.fn.expand('%:e')
+    if tail ~= 'h' then
+        return
+    end
+
+    local name = vim.fn.expand('%:r') .. '.cpp'
+    local ok = require('utils').exists(name)
+    if not ok then
+        -- 如果不存在创建
+        vim.api.nvim_command('!touch ' .. name)
+        -- 追加头文件引用
+        vim.api.nvim_command('!echo ' .. vim.fn.expand('\\\\#include \\"%:t\\"') .. ' >> ' .. name)
+    end
+    vim.api.nvim_command('vsp ' .. name)
+
+end;
+
+
 --[[
 
 -- 已弃用
