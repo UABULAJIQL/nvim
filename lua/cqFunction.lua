@@ -103,6 +103,7 @@ _G.CreateCpp = function()
         vim.api.nvim_command('!touch ' .. name)
         -- 追加头文件引用
         vim.api.nvim_command('!echo \\\\#include \\"' .. vim.fn.expand('%:t') .. '\\" >> ' .. name)
+        vim.api.nvim_command('normal <cr>')
     end
     vim.api.nvim_command('vsp ' .. name)
 
@@ -118,6 +119,7 @@ _G.HeadDef = function()
     vim.api.nvim_command('!echo \\\\#ifndef _' .. name .. '_H >> ' .. vim.fn.expand('%'))
     vim.api.nvim_command('!echo -e \'\\#define _' .. name .. '_H\\n\\n\\n\' >> ' .. vim.fn.expand('%'))
     vim.api.nvim_command('!echo \\\\#endif >>' .. vim.fn.expand('%'))
+    vim.api.nvim_command('normal <cr>')
 
 
 end;
