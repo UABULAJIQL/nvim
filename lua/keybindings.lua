@@ -452,9 +452,9 @@ pluginKeys.toggletermList = {
 map("", "f", "<cmd>HopChar1CurrentLineAC<cr>", opt)
 map("", "F", "<cmd>HopChar1CurrentLineBC<cr>", opt)
 -- 2字符定位
-map("", "t", "<cmd>HopChar2<cr>", opt)
+map("", "t", "<cmd>HopChar1<cr>", opt)
 -- 1字符定位
-map("", "T", "<cmd>HopChar1<cr>", opt)
+map("", "T", "<cmd>HopChar2<cr>", opt)
 
 ---markdown---
 -- 启动预览
