@@ -8,7 +8,7 @@ end
 treesitter.setup({
     -- 安装 language parser
     -- :TSInstallInfo 命令查看支持的语言 会自动安装对应的parsers
-    ensure_installed = { "c", "cpp", "vim", "lua", "json", "cmake", "python", "markdown" },
+    ensure_installed = { "c", "cpp", "vim", "lua", "json", "cmake", "python", "markdown", "proto" },
     -- 启用代码高亮模块
     highlight = {
         -- 开起treesitter高亮
