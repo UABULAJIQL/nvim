@@ -17,7 +17,7 @@ packer.startup({
 
         -- bufferline 顶部标签栏 vim-bbye是用来删除缓冲区改变布局的
         use { "akinsho/bufferline.nvim", tag = "v2.*",
-        requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" } }
+            requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" } }
 
         -- lualine 下方提示线
         use({ "nvim-lualine/lualine.nvim", requires = "kyazdani42/nvim-web-devicons" })
@@ -40,7 +40,7 @@ packer.startup({
         -- treesitter 语法高亮增强
         use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
         -- cpp根据头文件快速创建文件
-        use({"Badhi/nvim-treesitter-cpp-tools", requires = "nvim-treesitter/nvim-treesitter"})
+        use({ "Badhi/nvim-treesitter-cpp-tools", requires = "nvim-treesitter/nvim-treesitter" })
 
         --------------------- LSP --------------------
         -- LSP原来不是代码补全提示啥的 而是报错提醒和跳转啥的
@@ -131,7 +131,7 @@ packer.startup({
         use("windwp/nvim-autopairs")
 
         -- 突出显示光标下变量
-        use({"RRethy/vim-illuminate", commit = "6bfa5dc069bd4aa8513a3640d0b73392094749be"})
+        use({ "RRethy/vim-illuminate", commit = "6bfa5dc069bd4aa8513a3640d0b73392094749be" })
 
         -- gdb
         use({ "sakhnik/nvim-gdb", run = "./install.sh" })
@@ -145,6 +145,11 @@ packer.startup({
         ---markdown---
         -- 预览
         use({ "iamcco/markdown-preview.nvim", run = function() vim.fn["mkdp#util#install"]() end })
+        -- 解决预览浏览器代码访问速度慢问题
+        -- 在app/util/opener.js中switch的上面几行添加以下两行代码
+        -- platform = 'wsl2';
+        -- tool = "/mnt/c/Program\ Files\ \(x86\)/Microsoft/Edge/Application/msedge.exe"
+
         -- 粘贴图片 使用有问题自己用c++写了一个程序 只能在windows下运行的
         -- use({ 'ekickx/clipboard-image.nvim' })
         -- 管理 不是很清楚这个utf8干嘛的先移除
